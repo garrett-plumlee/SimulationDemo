@@ -5,43 +5,59 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="Garrett Plumlee">
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 
 <body>
     
     <img id="CI" src="https://llandscapes-10674.kxcdn.com/wp-content/uploads/2015/10/12602315873_4e0aacab16_k-678x1024.jpg" alt="Canva Image" width=100% height=100%>
-    <button id="btn" type="button">Next</button>
+    <button id="back-btn" class="blue-button" type="button" style="display: none;"> Back </button>
+    <button id="next-btn" class="blue-button" type="button"> Next </button>
 
 </body>
 </html>
 
 <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script>
-    let selection = 1;
+    let selection = 0;
     let link0 = "https://llandscapes-10674.kxcdn.com/wp-content/uploads/2015/10/12602315873_4e0aacab16_k-678x1024.jpg";
     let link1 = "https://thumbs.dreamstime.com/b/vertical-shot-road-magnificent-mountains-under-blue-sky-captured-california-163571053.jpg";
     let link2A = "https://onlinejpgtools.com/images/examples-onlinejpgtools/girl-with-camera.jpg";
     let link2B = "https://img.freepik.com/free-photo/vertical-shot-wood-pieces-lake-with-reflections-mountains-moraine-lake_181624-19512.jpg";
     let link2C = "https://cdn.pixabay.com/photo/2019/05/26/22/40/night-sea-4231466_640.jpg";
     $(document).ready(function () {
-        $('#btn').click(function (e) {
+        let outcome = -1;
+        $('#next-btn').click(function (e) {
             if (selection == 0) {
                 selection = 1;
-                document.getElementById('CI').src=link0;
-            } else if (selection == 1) {
-                selection = 2;
                 document.getElementById('CI').src=link1;
-            } else if (selection == 2) { 
-                document.getElementById('btn').style.display=('none');
-                selection = 0;
-                let outcome = Math.floor(Math.random()*3); // Randomly select number 0, 1, or 2
+                document.getElementById('back-btn').style.display = ('');
+            } else if (selection == 1) {
+                document.getElementById('next-btn').style.display = ('none');
+                selection = 2;
+                if (outcome == -1) {
+                    outcome = Math.floor(Math.random()*3); // Randomly select number 0, 1, or 2
+                }
                 if (outcome == 0) {
                     document.getElementById('CI').src=link2A;
                 } else if (outcome == 1) {
                     document.getElementById('CI').src=link2B;
-                } else {
+                } else if (outcome == 2) {
                     document.getElementById('CI').src=link2C;
                 }
+            }
+            return;
+        });
+        $('#back-btn').click(function (e) {
+            if (selection == 1) {
+                selection = 0;
+                document.getElementById('CI').src=link0;
+                document.getElementById('back-btn').style.display = ('none');
+            } else if (selection == 2) { 
+                selection = 1;
+                document.getElementById('CI').src=link1;
+                document.getElementById('next-btn').style.display = ('');
             } 
             return;
         });
