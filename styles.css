@@ -39,3 +39,10 @@
   background-color: #0064bd;
   box-shadow: none;
 }
+
+.page-text {
+  font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration-line: underline;
+}
