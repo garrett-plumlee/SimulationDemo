@@ -10,61 +10,33 @@
 
 
 <body>
-    <p id="page-count" class="page-text" style="display: none;">Page 1</p>
-    <img id="CI" src="https://i.imgur.com/6ZX6yQ8.png" alt="Canva Image" width=100% height=750px>
-    <p></p>
-    <button id="back-btn" class="blue-button" type="button" style="display: none;"> Back </button>
-    <button id="next-btn" class="blue-button" type="button" style="display: none;"> Next </button>
-
+    <img id="CI" src="" alt="Canva Image" width=100% height=750px>
 </body>
+
 </html>
 
 <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script>
-    let selection = 0;
-    let link0 = "https://i.imgur.com/8sOFPAi.png";
-    let link1 = "https://i.imgur.com/5nkYvQp.png";
-    let link2A = "https://i.imgur.com/6ZX6yQ8.png";
-    let link2B = "https://i.imgur.com/6ZX6yQ8.png";
-    let link2C = "https://i.imgur.com/6ZX6yQ8.png";
+    let link0 = "https://i.imgur.com/L9cDTxc.png";
+    let link1 = "https://i.imgur.com/inwhxkK.png";
+    let link2 = "https://i.imgur.com/wQQT8aV.png";
+    let link3 = "https://i.imgur.com/4aPPKq3.png";
+    let link4 = "https://i.imgur.com/a89gPhs.png";
+    let link5 = "https://i.imgur.com/29MtYJe.png";
     $(document).ready(function () {
-        let outcome = -1;
-        $('#next-btn').click(function (e) {
-            if (selection == 0) {
-                selection = 1;
-                document.getElementById("page-count").innerHTML = "Page 2";
-                document.getElementById('CI').src=link1;
-                document.getElementById('back-btn').style.display = ('');
-            } else if (selection == 1) {
-                document.getElementById("page-count").innerHTML = "Page 3";
-                document.getElementById('next-btn').style.display = ('none');
-                selection = 2;
-                if (outcome == -1) {
-                    outcome = Math.floor(Math.random()*3); // Randomly select number 0, 1, or 2
-                }
-                if (outcome == 0) {
-                    document.getElementById('CI').src=link2A;
-                } else if (outcome == 1) {
-                    document.getElementById('CI').src=link2B;
-                } else if (outcome == 2) {
-                    document.getElementById('CI').src=link2C;
-                }
-            }
-            return;
-        });
-        $('#back-btn').click(function (e) {
-            if (selection == 1) {
-                selection = 0;
-                document.getElementById("page-count").innerHTML = "Page 1";
-                document.getElementById('CI').src=link0;
-                document.getElementById('back-btn').style.display = ('none');
-            } else if (selection == 2) { 
-                selection = 1;
-                document.getElementById("page-count").innerHTML = "Page 2";
-                document.getElementById('CI').src=link1;
-                document.getElementById('next-btn').style.display = ('');
-            } 
-            return;
-        });
+        let outcome = Math.floor(Math.random()*6); // Randomly select number 0, 1, or 2
+        if (outcome == 0) {
+            document.getElementById('CI').src=link0;
+        } else if (outcome == 1) {
+            document.getElementById('CI').src=link1;
+        } else if (outcome == 2) {
+            document.getElementById('CI').src=link2;
+        } else if (outcome == 3) {
+            document.getElementById('CI').src=link3;
+        } else if (outcome == 4) {
+            document.getElementById('CI').src=link4;
+        } else if (outcome == 5) {
+            document.getElementById('CI').src=link5;
+        }
     });
 </script>
