@@ -18,13 +18,12 @@
 <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script>
     let link0 = "https://i.imgur.com/L9cDTxc.png";
-    let link1 = "https://i.imgur.com/inwhxkK.png";
-    let link2 = "https://i.imgur.com/wQQT8aV.png";
-    let link3 = "https://i.imgur.com/4aPPKq3.png";
-    let link4 = "https://i.imgur.com/a89gPhs.png";
-    let link5 = "https://i.imgur.com/29MtYJe.png";
+    let link1 = "https://i.imgur.com/wQQT8aV.png";
+    let link2 = "https://i.imgur.com/4aPPKq3.png";
+    let link3 = "https://i.imgur.com/a89gPhs.png";
+    let link4 = "https://i.imgur.com/29MtYJe.png";
     $(document).ready(function () {
-        let outcome = Math.floor(Math.random()*6); // Randomly select number 0, 1, or 2
+        let outcome = Math.floor(Math.random()*5); // Randomly select number 0, 1, or 2
         if (outcome == 0) {
             document.getElementById('CI').src=link0;
         } else if (outcome == 1) {
@@ -35,8 +34,6 @@
             document.getElementById('CI').src=link3;
         } else if (outcome == 4) {
             document.getElementById('CI').src=link4;
-        } else if (outcome == 5) {
-            document.getElementById('CI').src=link5;
         }
     });
 </script>
